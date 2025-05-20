@@ -6,17 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Empreendedorismo Jovem</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: "class",
-    };
-  </script>
-
 </head>
 
 <body class="bg-gray-50 text-gray-800 font-sans dark:bg-gray-900 dark:text-gray-100">
 
-<header class="bg-blue-600 text-white p-6">
+<header class="bg-blue-400 text-white p-6">
   <div class="max-w-4xl mx-auto text-center">
     <h1 class="text-3xl font-bold">Empreendedorismo Jovem</h1>
     <p class="mt-2">Introdução e primeiros passos para empreender</p>
@@ -27,9 +21,6 @@
 
 
   <main class="p-6 max-w-4xl mx-auto">
-  <button id="dark-toggle" class="fixed bottom-4 right-4 p-3 bg-gray-800 text-white rounded-full shadow-lg z-50">
-        🌙
-      </button>
     <!-- Introdução ao Empreendedorismo -->
     <section class="mb-10">
       <h2 class="text-2xl font-semibold mb-4">📌 Introdução ao Empreendedorismo</h2>
@@ -70,7 +61,7 @@
     </section>
 
     <!-- Quiz Interativo -->
-    <section class="mb-10 bg-blue-100 p-6 rounded-lg dark:bg-blue-900">
+    <section class="mb-10 bg-blue-800 p-6 rounded-lg">
       <h3 class="text-xl font-bold mb-3">🧹 Dinâmica Interativa: Que tipo de empreendedor sou eu?</h3>
       <form id="quizForm" class="space-y-4">
         <div>
@@ -141,13 +132,23 @@
       </ol>
     </section>
 
+    <div class="flex justify-center mb-4">
+      <a href="html.html">
+        <button class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded shadow">
+          🚀 Comece seu Primeiro Negócio Agora!
+        </button>
+      </a>
+    </div>
+
   </main>
 
-  <footer class="bg-gray-200 text-center text-sm p-4 dark:bg-gray-800 dark:text-gray-300">
-    © 2025 Empreendedorismo Jovem | Projeto Educativo
+  <footer class="bg-gray-700 text-center text-sm p-4 w-full">
+    © 2025 Empreendedorismo Jovem | Iniciativa Educativa
   </footer>
 
-  <script src="darkmode.js"></script>
+  <a href="hub.html" class="fixed bottom-4 right-4 bg-blue-600 hover:bg-blue-700 text-white text-2xl p-4 rounded-full shadow-lg z-50 flex items-center justify-center" title="Voltar ao Hub">
+    🏠
+  </a>
 
 </body>
 
