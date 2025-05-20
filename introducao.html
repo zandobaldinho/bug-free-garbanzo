@@ -28,9 +28,9 @@
         reais. Envolve iniciativa, coragem, planejamento e visão de futuro.</p>
       <p class="mb-4">Veja alguns vídeos inspiradores para começar sua jornada empreendedora:</p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <iframe class="w-full h-64" src="https://www.youtube.com/watch?v=3n-DTjQz7Ds"
+        <iframe class="w-full h-64" src="https://www.youtube.com/embed/3n-DTjQz7Ds"
           title="Empreendedorismo para jovens - Sebrae" frameborder="0" allowfullscreen></iframe>
-        <iframe class="w-full h-64" src="https://www.youtube.com/watch?v=zUw7a-esRG0"
+        <iframe class="w-full h-64" src="https://www.youtube.com/embed/zUw7a-esRG0"
           title="10 conselhos para o empreendedor iniciante" frameborder="0" allowfullscreen></iframe>
       </div>
     </section>
@@ -99,23 +99,31 @@
       <div id="resultadoQuiz" class="mt-4 font-semibold"></div>
       <script>
         function calcularPerfil() {
-          const respostas = Array.from(document.querySelectorAll('#quizForm input:checked')).map(el => el.value);
-          const contagem = { A: 0, B: 0, C: 0 };
-          respostas.forEach(r => { if (contagem[r] !== undefined) contagem[r]++; });
+            const respostas = Array.from(document.querySelectorAll('#quizForm input:checked')).map(el => el.value);
+            if (respostas.length < 5) {
+                alert('Por favor, responda todas as perguntas!');
+                return;
+            }
 
-          let resultado = '';
-          if (contagem.A >= contagem.B && contagem.A >= contagem.C) {
-            resultado = 'Empreendedor Visionário: Perfil inovador e gosta de riscos. Ideal para startups e ideias criativas.';
-          } else if (contagem.B >= contagem.A && contagem.B >= contagem.C) {
-            resultado = 'Empreendedor Gestor: Organizado e metódico. Perfeito para negócios tradicionais ou liderança.';
-          } else if (contagem.C >= contagem.A && contagem.C >= contagem.B) {
-            resultado = 'Empreendedor Comunicador: Destaca-se no contato com pessoas. Ótimo para vendas e redes sociais.';
-          } else {
-            resultado = 'Empreendedor Social/Sustentável: Foco em impacto, propósito e sustentabilidade.';
-          }
-          document.getElementById('resultadoQuiz').textContent = resultado;
+            const contagem = { A: 0, B: 0, C: 0 };
+            respostas.forEach(r => { if (contagem[r] !== undefined) contagem[r]++; });
+
+            let resultado = '';
+            if (contagem.A >= contagem.B && contagem.A >= contagem.C) {
+                resultado = '🚀 Empreendedor Visionário: Perfil inovador e gosta de riscos. Ideal para startups e ideias criativas.';
+            } else if (contagem.B >= contagem.A && contagem.B >= contagem.C) {
+                resultado = '📊 Empreendedor Gestor: Organizado e metódico. Perfeito para negócios tradicionais ou liderança.';
+            } else if (contagem.C >= contagem.A && contagem.C >= contagem.B) {
+                resultado = '💬 Empreendedor Comunicador: Destaca-se no contato com pessoas. Ótimo para vendas e redes sociais.';
+            } else {
+                resultado = '🌍 Empreendedor Social/Sustentável: Foco em impacto, propósito e sustentabilidade.';
+            }
+
+            const resultadoElement = document.getElementById('resultadoQuiz');
+            resultadoElement.textContent = resultado;
+            resultadoElement.style.display = 'block';
         }
-      </script>
+    </script>
     </section>
 
     <!-- Desafio de 7 Dias -->
@@ -133,11 +141,11 @@
     </section>
 
     <div class="flex justify-center mb-4">
-      <a href="html.html">
-        <button class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded shadow">
+    <a href="html.html">
+      <button class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded shadow">
           🚀 Comece seu Primeiro Negócio Agora!
-        </button>
-      </a>
+      </button>
+    </a>
     </div>
 
   </main>

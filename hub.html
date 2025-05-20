@@ -14,22 +14,64 @@
     </div>
   </header>
 
-  <main class="flex-1 flex flex-col items-center justify-center">
+  <main class="flex-1 flex flex-col items-center justify-center py-6 px-4">
     <div class="space-y-6 w-full max-w-md">
       <a href="introducao.html" class="block">
         <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded shadow text-lg transition">📌 Introdução ao Empreendedorismo</button>
       </a>
+      <a href="objetivo.html" class="block">
+        <button class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-4 px-6 rounded shadow text-lg transition">🎯 Fundamentos de Empreendedorismo</button>
+      </a>
       <a href="html.html" class="block">
         <button class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-4 px-6 rounded shadow text-lg transition">🚀 Como Começar Seu Negócio</button>
       </a>
-      <a href="objetivo.html" class="block">
-        <button class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-4 px-6 rounded shadow text-lg transition">🎯 Objetivos Educacionais</button>
-      </a>
+    </div>
+
+    <!-- Formulário de feedback -->
+    <div class="mt-12 w-full max-w-xl bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-semibold mb-4 text-center">📣 Conte pra gente o que achou do conteúdo</h2>
+      <form id="formFeedback" class="space-y-4">
+        <input type="text" name="nome" placeholder="Seu nome" required class="w-full px-4 py-2 rounded border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-100" />
+        <input type="email" name="email" placeholder="E-mail (opcional)" class="w-full px-4 py-2 rounded border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-100" />
+        <textarea name="mensagem" rows="4" placeholder="Sua mensagem" required class="w-full px-4 py-2 rounded border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-100"></textarea>
+        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded shadow w-full">
+          Enviar Feedback
+        </button>
+      </form>
+      <p id="statusMsg" class="text-center mt-4 text-green-600 hidden">✅ Feedback enviado com sucesso!</p>
     </div>
   </main>
 
-  <footer class="bg-gray-700 text-center text-sm p-4 w-full">
+  <footer class="bg-gray-700 text-center text-sm p-4 w-full mt-6">
     © 2025 Empreendedorismo Jovem | Iniciativa Educativa
   </footer>
+
+  <script>
+    const form = document.getElementById("formFeedback");
+    const statusMsg = document.getElementById("statusMsg");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const formData = {
+        nome: form.nome.value,
+        email: form.email.value,
+        mensagem: form.mensagem.value
+      };
+
+      try {
+        await fetch("https://script.google.com/macros/s/AKfycbxP3FABa9Hiq_zSFNLGPWPxKo7I91eLmmFfeeJ_NvwIru_uTmdKrhFXwR72lkCZjkg1/exec", {
+          method: "POST",
+          body: JSON.stringify(formData),
+          headers: { "Content-Type": "application/json" }
+        });
+
+        form.reset();
+        statusMsg.classList.remove("hidden");
+      } catch (error) {
+        alert("Erro ao enviar. Tente novamente.");
+      }
+    });
+  </script>
 </body>
 </html>
