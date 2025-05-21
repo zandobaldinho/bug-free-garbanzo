@@ -27,18 +27,62 @@
       </a>
     </div>
 
-    <!-- Formulário de feedback -->
-    <div class="mt-12 w-full max-w-xl bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-      <h2 class="text-2xl font-semibold mb-4 text-center">📣 Conte-nos o que achou do conteúdo</h2>
-      <form id="formFeedback" class="space-y-4">
-        <input type="text" name="nome" placeholder="Seu nome" required class="w-full px-4 py-2 rounded border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-100" />
-        <input type="email" name="email" placeholder="E-mail (opcional)" class="w-full px-4 py-2 rounded border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-100" />
-        <textarea name="mensagem" rows="4" placeholder="Sua mensagem" required class="w-full px-4 py-2 rounded border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-100"></textarea>
-        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded shadow w-full">
-          Enviar Feedback
-        </button>
-      </form>
-      <p id="statusMsg" class="text-center mt-4 text-green-600 hidden">✅ Feedback enviado com sucesso!</p>
+    <div class="flex justify-center items-center py-16 px-4">
+      <div class="w-full max-w-xl bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
+        <h2 class="text-2xl font-semibold mb-6 text-center text-gray-800 dark:text-gray-100">📣 Formulário de Contato</h2>
+        <form
+          action="https://formsubmit.co/yojiyo1733@frisbook.com"
+          method="POST"
+          class="space-y-6"
+        >
+          <div class="space-y-2">
+            <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Nome</label>
+            <input 
+              type="text" 
+              name="name" 
+              id="name" 
+              required 
+              class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200"
+            />
+          </div>
+
+          <div class="space-y-2">
+            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">E-mail</label>
+            <input 
+              type="email" 
+              name="email" 
+              id="email" 
+              required 
+              class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200"
+            />
+          </div>
+
+          <div class="space-y-2">
+            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Mensagem</label>
+            <textarea 
+              name="message" 
+              id="message" 
+              required 
+              rows="4"
+              class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 resize-none"
+            ></textarea>
+          </div>
+
+          <input type="hidden" name="_captcha" value="false" />
+          <input
+            type="hidden"
+            name="_next"
+            value="https://zandobaldinho.github.io/bug-free-garbanzo/obrigado.html"
+          />
+
+          <button 
+            type="submit"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition duration-200 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          >
+            Enviar Mensagem
+          </button>
+        </form>
+      </div>
     </div>
   </main>
 

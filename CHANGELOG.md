@@ -1,5 +1,14 @@
-
 # CHANGELOG
+
+## Atualizações Recentes
+
+### Página de Agradecimento (`obrigado.html`)
+- Criação da página de agradecimento após envio de feedback.
+- Implementação de design responsivo com Tailwind CSS.
+- Adição de elementos visuais interativos com emojis.
+- Inclusão de animações suaves para elementos decorativos.
+- Implementação de mensagem personalizada para feedback.
+- Criação de botão de retorno à página inicial com efeitos hover.
 
 ## Estrutura Principal do Projeto
 - Organização geral dos arquivos do projeto.
